@@ -31,7 +31,7 @@ function Login() {
           </div>
           <div className="logup">
             <p>Don't have an account?</p>
-            <p>Sign up</p>
+            <p className="cursor">Sign up</p>
           </div>
           <div className="get-app">
             <div>Get the app.</div>
