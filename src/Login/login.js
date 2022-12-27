@@ -2,13 +2,14 @@ import "./login.css";
 import Logo from "./Instagram_logo.svg.png";
 import Fc from "./124010.png";
 import SS from "./screenshot1.png"
+import Nuur from "./Screenshot 2022-12-27 170322.png"
 
 function Login() {
   return (
     <div className="Login">
       <div className="login-center">
         <div className="login-img">
-          <img src={SS} />
+          <img src={Nuur} />
         </div>
         <div className="login-up">
           <div className="login">

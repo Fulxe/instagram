@@ -14,18 +14,9 @@
 .login-img {
   width: 18%;
   height: 63%;
-  background-image: url("https://static.cdninstagram.com/rsrc.php/v3/y4/r/ItTndlZM2n2.png");
-  background-repeat: no-repeat;
-  background-size: cover;
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
 }
 .login-img img {
-  width: 61%;
-  display: flex;
-  position: relative;
-  bottom: 3%;
+  width: 100%;
 }
 .login-up {
   width: 16%;

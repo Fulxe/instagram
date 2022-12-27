@@ -6,8 +6,8 @@ import Login from "./Login/login";
 function App() {
   return (
     <div className="App">
-      <Login/>
       <Navbar />
+      <Login />
     </div>
   );
 }
