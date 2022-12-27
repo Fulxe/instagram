@@ -1,10 +1,10 @@
 import "./Navbar.css";
 import Logo from "./Logo.jpg";
-import { Outlet , Link } from "react-router-dom";
+import { Outlet, Link } from "react-router-dom";
 
 function Navbar() {
   return (
-    <div>
+    <div style={{ display: "flex" }}>
       <div className="main">
         <div className="up">
           <img src={Logo} />
@@ -288,9 +288,11 @@ function Navbar() {
           <p>More</p>
         </div>
       </div>
-      <Outlet />
+      <div style={{ overflow: "scroll", height: "100vh" }}>
+        <Outlet />
+      </div>
     </div>
-  )
-};
+  );
+}
 
 export default Navbar;
