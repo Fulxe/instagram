@@ -4,7 +4,6 @@
   /* background-color: rgb(34, 34, 34); */
   display: flex;
   justify-content: center;
-  border: 1px solid red;
 }
 .home-center {
   width: 828px;
