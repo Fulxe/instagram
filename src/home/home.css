@@ -1,6 +1,6 @@
 .Home {
   width: 83vw;
-  height:1000vh;
+  height:fit-content;
   /* background-color: rgb(34, 34, 34); */
   display: flex;
   justify-content: center;
