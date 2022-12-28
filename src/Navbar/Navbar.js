@@ -1,6 +1,7 @@
 import "./Navbar.css";
 import Logo from "./Logo.jpg";
 import { Outlet, Link } from "react-router-dom";
+import Pro from "./term-bg-1-3d6355ab.jpg"
 
 function Navbar() {
   return (
@@ -237,6 +238,7 @@ function Navbar() {
             <p>Create</p>
           </div>
           <div>
+            <img src={Pro}/>
             <p>Profile</p>
           </div>
         </div>
@@ -288,7 +290,7 @@ function Navbar() {
           <p>More</p>
         </div>
       </div>
-      <div style={{ overflow: "scroll", height: "100vh" }}>
+      <div style={{ height: "100vh" }}>
         <Outlet />
       </div>
     </div>

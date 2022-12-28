@@ -10,7 +10,7 @@
   align-items: center;
 }
 .up img {
-  width: 30%;
+  width: 140px;
   margin-left: 6%;
 }
 .center {
@@ -36,6 +36,11 @@
 }
 .center svg {
   margin-left: 6%;
+}
+.center img {
+  width: 40px;
+  margin-left: 5%;
+  border-radius: 100%;
 }
 .down {
   width: 100%;

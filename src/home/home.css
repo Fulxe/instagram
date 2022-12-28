@@ -1,9 +1,10 @@
 .Home {
-  width: 100vw;
+  width: 83vw;
   height:1000vh;
   /* background-color: rgb(34, 34, 34); */
   display: flex;
   justify-content: center;
+  border: 1px solid red;
 }
 .home-center {
   width: 828px;
