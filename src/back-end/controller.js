@@ -13,3 +13,36 @@ exports.createUser = async (req, res, next) => {
   const createUser = await UserModule.create({ ...req.body });
   res.status(201).json({ message: ` New user is created`, data: createUser });
 };
+exports.getUser = async (req, res, next) => {
+  if (!req.body?.firstName || !req.body?.email || !req.body?.password) {
+    res
+      .status(400)
+      .json({ message: `Firsname , email or password are required` });
+    return;
+  }
+
+  const createUser = await UserModule.create({ ...req.body });
+  res.status(201).json({ message: ` New user is created`, data: createUser });
+};
+exports.updateUser = async (req, res, next) => {
+  if (!req.body?.firstName || !req.body?.email || !req.body?.password) {
+    res
+      .status(400)
+      .json({ message: `Firsname , email or password are required` });
+    return;
+  }
+
+  const createUser = await UserModule.create({ ...req.body });
+  res.status(201).json({ message: ` New user is created`, data: createUser });
+};
+exports.deleteUser = async (req, res, next) => {
+  if (!req.body?.firstName || !req.body?.email || !req.body?.password) {
+    res
+      .status(400)
+      .json({ message: `Firsname , email or password are required` });
+    return;
+  }
+
+  const createUser = await UserModule.create({ ...req.body });
+  res.status(201).json({ message: ` New user is created`, data: createUser });
+};
