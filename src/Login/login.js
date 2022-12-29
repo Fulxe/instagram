@@ -3,6 +3,7 @@ import Logo from "./Instagram_logo.svg.png";
 import Fc from "./124010.png";
 import Nuur from "./Screenshot 2022-12-27 170322.png";
 import { Link } from "react-router-dom";
+import Footer from "../footer/footer";
 
 function Login() {
   return (
@@ -45,26 +46,7 @@ function Login() {
           </div>
         </div>
       </div>
-      <div className="login-footer">
-        <div className="footer1">
-          <p>Meta</p>
-          <p>About</p>
-          <p>Blog</p>
-          <p>Jobs</p>
-          <p>Help</p>
-          <p>API</p>
-          <p>Privacy</p>
-          <p>Terms</p>
-          <p>Top account</p>
-          <p>Locations</p>
-          <p>Instagram Lite</p>
-          <p>Contact Uploading & Non-Users</p>
-        </div>
-        <div className="footer2">
-          <p>English</p>
-          <p>© 2022 Instagram from Meta</p>
-        </div>
-      </div>
+      <Footer />
     </div>
   );
 }
