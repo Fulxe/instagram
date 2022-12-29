@@ -1,7 +1,8 @@
 import "./login.css";
 import Logo from "./Instagram_logo.svg.png";
 import Fc from "./124010.png";
-import Nuur from "./Screenshot 2022-12-27 170322.png"
+import Nuur from "./Screenshot 2022-12-27 170322.png";
+import { Link } from "react-router-dom";
 
 function Login() {
   return (
@@ -17,7 +18,9 @@ function Login() {
               <input placeholder="Phone number, username, or email" />
               <input placeholder="Password" />
             </div>
-            <button>Log in</button>
+            <Link to="/Home">
+              <button>Log in</button>
+            </Link>
             <div className="login-hr">
               <div></div>
               <p>OR</p>
@@ -31,7 +34,7 @@ function Login() {
           </div>
           <div className="logup">
             <p>Don't have an account?</p>
-            <p className="cursor">Sign up</p>
+            <Link to="/Sign">Sign up</Link>
           </div>
           <div className="get-app">
             <div>Get the app.</div>
