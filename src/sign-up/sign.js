@@ -7,7 +7,7 @@ import React, { useState } from "react";
 import axios from "axios";
 
 function Sign() {
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
   const [value, setValue] = useState({});
 
   const create = async () => {
@@ -24,14 +24,14 @@ function Sign() {
       console.log(error);
     }
   };
-  function log() {
-    if (value.email && value.password && value.username) {
-      navigate("/home");
-    } else {
-      return alert("nothing");
-    }
-    setValue();
-  }
+  // function log() {
+  //   if (value.email && value.password && value.username) {
+  //     navigate("/home");
+  //   } else {
+  //     return alert("nothing");
+  //   }
+  //   setValue();
+  // }
   // const [username , setusername] = useState('');
   // const [password , setpassword] = useState('');
   // const [email , setemail] = useState('');
