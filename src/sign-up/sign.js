@@ -2,20 +2,51 @@ import "./sign.css";
 import Footer from "../footer/footer";
 import Logo from "./Instagram_logo.svg.png";
 import Fc from "./124010.png";
-import {useNavigate} from "react-router-dom";
-import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import React, { useState } from "react";
+import axios from "axios";
 
 function Sign() {
-const navigate = useNavigate();
-const [value , setValue] = useState({});
-function log () {
-  if ( value.email && value.password && value.username) {
-    navigate("/home")
-  } else {
-    return alert("nothing")
+  const navigate = useNavigate();
+  const [value, setValue] = useState({});
+
+  const create = async () => {
+    try {
+      // console.log(value);
+      await axios.post(`http://localhost:1000`, {
+        firstName: value.username,
+        email: value.email,
+        password: value.password,
+      });
+      setValue({});
+      // naviga
+    } catch (error) {
+      console.log(error);
+    }
+  };
+  function log() {
+    if (value.email && value.password && value.username) {
+      navigate("/home");
+    } else {
+      return alert("nothing");
+    }
+    setValue();
   }
-  setValue();
-}
+  // const [username , setusername] = useState('');
+  // const [password , setpassword] = useState('');
+  // const [email , setemail] = useState('');
+
+  // useEffect(() => {
+  //   axios.get("http://localhost:1000")
+  //   .then(
+  //     (res) => {
+  //       console.log(res);
+  //     },
+  //     (error) => {
+  //       console.log(error);
+  //     }
+  //   );
+  // }, []);
 
   return (
     <div className="Sign">
@@ -36,9 +67,25 @@ function log () {
               <div></div>
             </div>
             <div className="login-input">
-              <input placeholder="Email" type={"email"} onChange={(e) => setValue({...value , email: e.target.value})} />
-              <input placeholder="Username"  type={"username"} onChange={(e) => setValue({...value , username: e.target.value})} />
-              <input placeholder="Password"  type={"password"} onChange={(e) => setValue({...value , password: e.target.value})} />
+              <input
+                placeholder="Email"
+                type={"email"}
+                onChange={(e) => setValue({ ...value, email: e.target.value })}
+              />
+              <input
+                placeholder="Username"
+                type={"username"}
+                onChange={(e) =>
+                  setValue({ ...value, username: e.target.value })
+                }
+              />
+              <input
+                placeholder="Password"
+                type={"password"}
+                onChange={(e) =>
+                  setValue({ ...value, password: e.target.value })
+                }
+              />
             </div>
             <p className="learn-more">
               People who use our service may have uploaded your contact
@@ -48,7 +95,9 @@ function log () {
               By signing up, you agree to our Terms , Privacy Policy and Cookies
               Policy .
             </p>
-            <button className="sign-fc" onClick={() => log()}>Sign up</button>
+            <button className="sign-fc" onClick={() => create()} onChange={() => log()}>
+              Sign up
+            </button>
           </div>
         </div>
         <div className="second">

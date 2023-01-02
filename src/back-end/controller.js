@@ -9,13 +9,13 @@ exports.createUser = async (req, res) => {
       .json({ message: `Firsname , email or password are required` });
     return;
   }
-
+console.log(req.body)
   const createUser = await UserModel.create({ ...req.body });
   res.status(201).json({ message: ` New user is created`, data: createUser });
 };
 exports.getUsers = async (req, res) => {
   try {
-    const user = await UserModul.find();
+    const user = await UserModel.find();
     res.status(200).json({
       message: true,
       data: users,

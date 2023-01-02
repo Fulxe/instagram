@@ -4,7 +4,7 @@ import Fc from "./124010.png";
 import Nuur from "./Screenshot 2022-12-27 170322.png";
 import { Link } from "react-router-dom";
 import Footer from "../footer/footer";
-import axios from "axios"
+
 
 function Login() {
   return (
@@ -20,7 +20,7 @@ function Login() {
               <input placeholder="Phone number, username, or email" />
               <input placeholder="Password" />
             </div>
-              <button>Log in</button>
+              <button value={"log in"} href="../home" >Log in</button>
             <div className="login-hr">
               <div></div>
               <p>OR</p>
