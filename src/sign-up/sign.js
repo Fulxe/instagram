@@ -27,14 +27,28 @@ function Sign() {
               <input placeholder="Username" />
               <input placeholder="Password" />
             </div>
-            <p className="Learn more">
+            <p className="learn-more">
               People who use our service may have uploaded your contact
               information to Instagram. Learn More
             </p>
+            <p className="privacy">
+              By signing up, you agree to our Terms , Privacy Policy and Cookies
+              Policy .
+            </p>
+            <button className="sign-fc">Sign up</button>
           </div>
         </div>
-        <div className="second"></div>
-        <div className="third"></div>
+        <div className="second">
+          <p>Have an account?</p>
+          <a href="/">Log in</a>
+        </div>
+        <div className="get-app">
+          <div>Get the app.</div>
+          <div className="get-app2">
+            <img src="https://static.cdninstagram.com/rsrc.php/v3/yz/r/c5Rp7Ym-Klz.png" />
+            <img src="https://static.cdninstagram.com/rsrc.php/v3/yu/r/EHY6QnZYdNX.png" />
+          </div>
+        </div>
       </div>
       <Footer />
     </div>
