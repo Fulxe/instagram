@@ -2,8 +2,21 @@ import "./sign.css";
 import Footer from "../footer/footer";
 import Logo from "./Instagram_logo.svg.png";
 import Fc from "./124010.png";
+import {useNavigate} from "react-router-dom";
+import { useState } from "react";
 
 function Sign() {
+const navigate = useNavigate();
+const [value , setValue] = useState({});
+function log () {
+  if ( value.email && value.password && value.username) {
+    navigate("/home")
+  } else {
+    return alert("nothing")
+  }
+  setValue();
+}
+
   return (
     <div className="Sign">
       <div className="sign-center">
@@ -23,9 +36,9 @@ function Sign() {
               <div></div>
             </div>
             <div className="login-input">
-              <input placeholder="Email" />
-              <input placeholder="Username" />
-              <input placeholder="Password" />
+              <input placeholder="Email" type={"email"} onChange={(e) => setValue({...value , email: e.target.value})} />
+              <input placeholder="Username"  type={"username"} onChange={(e) => setValue({...value , username: e.target.value})} />
+              <input placeholder="Password"  type={"password"} onChange={(e) => setValue({...value , password: e.target.value})} />
             </div>
             <p className="learn-more">
               People who use our service may have uploaded your contact
@@ -35,7 +48,7 @@ function Sign() {
               By signing up, you agree to our Terms , Privacy Policy and Cookies
               Policy .
             </p>
-            <button className="sign-fc">Sign up</button>
+            <button className="sign-fc" onClick={() => log()}>Sign up</button>
           </div>
         </div>
         <div className="second">

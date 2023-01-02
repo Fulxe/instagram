@@ -2,7 +2,7 @@ const { req, res } = require("express");
 
 const UserModel = require("./model");
 
-exports.createUser = async (req, res, next) => {
+exports.createUser = async (req, res) => {
   if (!req.body?.firstName || !req.body?.email || !req.body?.password) {
     res
       .status(400)
@@ -13,7 +13,7 @@ exports.createUser = async (req, res, next) => {
   const createUser = await UserModel.create({ ...req.body });
   res.status(201).json({ message: ` New user is created`, data: createUser });
 };
-exports.getUSers = async (req, res, next) => {
+exports.getUSers = async (req, res) => {
   try {
     const user = await UserModul.find();
     res.status(200).json({
@@ -24,7 +24,7 @@ exports.getUSers = async (req, res, next) => {
     return res.status(400).json({ message: true, data: null });
   }
 };
-exports.getUser = async (req, res, next) => {
+exports.getUser = async (req, res) => {
   const { id } = req.params;
   try {
     const user = await UserModel.findById(id);
@@ -33,7 +33,7 @@ exports.getUser = async (req, res, next) => {
     return res.status(400).json({ message: true, data: null });
   }
 };
-exports.updateUser = async (req, res, next) => {
+exports.updateUser = async (req, res) => {
   const { id } = req.params;
   try {
     const user = await UserModel.findByIdAndUpdate(id, { ...req.body });
@@ -45,7 +45,7 @@ exports.updateUser = async (req, res, next) => {
     return res.status(400).json({ message: true, data: null });
   }
 };
-exports.deleteUser = async (req, res, next) => {
+exports.deleteUser = async (req, res) => {
   const { id } = req.params;
   try {
     const user = await UserModel.findByIdAndDelete(id, { ...req.body });
