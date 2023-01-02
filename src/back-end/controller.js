@@ -13,7 +13,7 @@ exports.createUser = async (req, res) => {
   const createUser = await UserModel.create({ ...req.body });
   res.status(201).json({ message: ` New user is created`, data: createUser });
 };
-exports.getUSers = async (req, res) => {
+exports.getUsers = async (req, res) => {
   try {
     const user = await UserModul.find();
     res.status(200).json({
