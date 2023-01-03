@@ -9,7 +9,7 @@ exports.createUser = async (req, res) => {
       .json({ message: `Firsname , email or password are required` });
     return;
   }
-console.log(req.body)
+  console.log(req.body)
   const createUser = await UserModel.create({ ...req.body });
   res.status(201).json({ message: ` New user is created`, data: createUser });
 };
@@ -58,9 +58,7 @@ exports.deleteUser = async (req, res) => {
   }
 };
 exports.loginUser = async (req, res) => {
-  const user = await UserModel.findOne(req.body);
-  res.status(200).json(user)
-
-}
-
-
+  const { eamil, password } = req.body;
+  const user = await UserModel.findOne({email});
+  if (user.password === password) res.send(user.id);
+};

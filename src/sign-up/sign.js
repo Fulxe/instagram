@@ -8,17 +8,19 @@ import axios from "axios";
 
 function Sign() {
   // const navigate = useNavigate();
-  const [value, setValue] = useState({});
+  const [value, setValue] = useState({ email: "", password: "", username: "" });
 
   const create = async () => {
     try {
       // console.log(value);
-      await axios.post(`http://localhost:1000`, {
+      const user = await axios.post(`http://localhost:1000`, {
         firstName: value.username,
         email: value.email,
         password: value.password,
       });
-      setValue({});
+      setValue({ email: "", password: "", username: "" });
+      console.log(user);
+      localStorage.setItem("uid", user.data.data._id);
       // naviga
     } catch (error) {
       console.log(error);
@@ -68,11 +70,13 @@ function Sign() {
             </div>
             <div className="login-input">
               <input
+                value={value.email}
                 placeholder="Email"
                 type={"email"}
                 onChange={(e) => setValue({ ...value, email: e.target.value })}
               />
               <input
+                value={value.username}
                 placeholder="Username"
                 type={"username"}
                 onChange={(e) =>
@@ -82,6 +86,7 @@ function Sign() {
               <input
                 placeholder="Password"
                 type={"password"}
+                value={value.password}
                 onChange={(e) =>
                   setValue({ ...value, password: e.target.value })
                 }
