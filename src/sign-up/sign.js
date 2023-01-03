@@ -95,7 +95,7 @@ function Sign() {
               By signing up, you agree to our Terms , Privacy Policy and Cookies
               Policy .
             </p>
-            <button className="sign-fc" onClick={() => create()} onChange={() => log()}>
+            <button className="sign-fc" onClick={() => create()}>
               Sign up
             </button>
           </div>
