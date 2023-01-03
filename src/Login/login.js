@@ -2,11 +2,23 @@ import "./login.css";
 import Logo from "./Instagram_logo.svg.png";
 import Fc from "./124010.png";
 import Nuur from "./Screenshot 2022-12-27 170322.png";
-import { Link } from "react-router-dom";
+import { Link, Navigate, useNavigate } from "react-router-dom";
 import Footer from "../footer/footer";
-
+import axios from "axios";
+import { useState } from "react";
 
 function Login() {
+  const navigate = useNavigate();
+  const [value , setValue] = useState({}); 
+  const Log = async () => {
+    const { data } = axios.post("http://localhost:1000/login", value);
+    if (data) {
+      navigate("/");
+    } else {
+      alert("nothing");
+    }
+  };
+
   return (
     <div className="Login">
       <div className="login-center">
@@ -17,10 +29,12 @@ function Login() {
           <div className="login">
             <img src={Logo} />
             <div className="login-input">
-              <input placeholder="Phone number, username, or email" />
-              <input placeholder="Password" />
+              <input placeholder="Phone number, username, or email" onChange={(e) => setValue({...value , email: e.target.value})} />
+              <input type={"password"} placeholder="Password"  onChange={(e) => setValue({...value , password: e.target.value})} />
             </div>
-              <button value={"log in"} href="../home" >Log in</button>
+            <button onClick={() => Log()}>
+              Log in
+            </button>
             <div className="login-hr">
               <div></div>
               <p>OR</p>
