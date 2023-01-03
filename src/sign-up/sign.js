@@ -2,13 +2,14 @@ import "./sign.css";
 import Footer from "../footer/footer";
 import Logo from "./Instagram_logo.svg.png";
 import Fc from "./124010.png";
-import { useNavigate } from "react-router-dom";
+import { Navigate, useNavigate } from "react-router-dom";
 import React, { useState } from "react";
 import axios from "axios";
 
 function Sign() {
   // const navigate = useNavigate();
   const [value, setValue] = useState({ email: "", password: "", username: "" });
+const navigate = useNavigate();
 
   const create = async () => {
     try {
@@ -22,6 +23,9 @@ function Sign() {
       console.log(user);
       localStorage.setItem("uid", user.data.data._id);
       // naviga
+      if (user) {
+        navigate("/Home")
+      } 
     } catch (error) {
       console.log(error);
     }
