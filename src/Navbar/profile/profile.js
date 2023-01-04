@@ -1,7 +1,10 @@
 import "./profile.css";
 import Pro from "../term-bg-1-3d6355ab.jpg";
+import { useState } from "react";
 
 function Profile() {
+  const [show, setShow] = useState(false);
+
   return (
     <div className="profile">
       <div className="pro-center">
@@ -48,15 +51,25 @@ function Profile() {
               <p>following</p>
             </div>
             <div className="third">
-                <p>Fulxe</p>
+              <p>Fulxe</p>
             </div>
           </div>
         </div>
         <div className="pro-posts">
-            <button>Add post</button>
-            <div className="post"></div>
+          <button onClick={() => setShow(!show)}>Add post</button>
+          <div className="post"></div>
         </div>
       </div>
+      {show && (
+        <div className="add">
+          <div className="add-post">
+            <input placeholder="Name"></input>
+            <input placeholder="description"></input>
+            <input type={Image} placeholder="image"></input>
+            <button>Post</button>
+          </div>
+        </div>
+      )}
     </div>
   );
 }

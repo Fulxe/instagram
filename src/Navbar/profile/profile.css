@@ -3,6 +3,8 @@
   height: 100vh;
   display: flex;
   justify-content: center;
+  position: absolute;
+  z-index: 0;
 }
 .profile div {
   border: 1px solid red;
@@ -53,6 +55,7 @@
   color: red;
   border: none;
   border-radius: 10px;
+  cursor: pointer;
 }
 .first {
   display: flex;
@@ -61,6 +64,10 @@
 }
 .first button {
   padding: 7px 16px;
+  cursor: pointer;
+}
+.first svg {
+  cursor: pointer;
 }
 .second {
   color: white;
@@ -76,4 +83,46 @@
 .post {
   width: 100%;
   height: fit-content;
+}
+.add {
+  width: 84vw;
+  height: 100vh;
+  position: absolute;
+  /* top: 6vw; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+.add-post {
+  width: 30vw;
+  height: 30vh;
+  background-color: white;
+  border-radius: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3vh;
+}
+input:nth-child(1) {
+  width: 45%;
+  height: 3vh;
+  border-radius: 10px;
+}
+input:nth-child(2) {
+  width: 50%;
+  height: 5vh;
+  border-radius: 10px;
+}
+input:nth-child(3) {
+  width: 50%;
+  height: fit-content;
+}
+.add-post button {
+  padding: 10px 20px;
+  border: 1px solid black;
+  border-radius: 10px;
+  color:red ;
+  background-color: black;
+  cursor: pointer;
 }
