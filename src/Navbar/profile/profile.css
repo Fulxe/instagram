@@ -1,13 +1,79 @@
 .profile {
-    width: 84vw;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    border: 1px solid red;
+  width: 84vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+}
+.profile div {
+  border: 1px solid red;
 }
 .pro-center {
-    width: 50vw;
-    display: flex;
-    flex-direction: column;
-    border: 1px solid red;
+  width: 50vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5vh;
+}
+.pro-up {
+  width: 95%;
+  height: 20%;
+  display: flex;
+  justify-content: center;
+  gap: 1vw;
+}
+.up-left {
+  width: 20%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.up-left img {
+  width: 70%;
+  border-radius: 100%;
+}
+.up-right {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.up-right div {
+  width: 70%;
+  height: 30%;
+}
+.pro-posts {
+  width: 95%;
+  height: fit-content;
+}
+.pro-posts button {
+  padding: 10px 20px;
+  background-color: black;
+  color: red;
+  border: none;
+  border-radius: 10px;
+}
+.first {
+  display: flex;
+  align-items: center;
+  gap: 1vw;
+}
+.first button {
+  padding: 7px 16px;
+}
+.second {
+  color: white;
+  font-size: 14px;
+  font-weight: 600;
+  gap: 3vw;
+}
+.third {
+  color: white;
+  font-size: 14px;
+  font-weight: 500;
+}
+.post {
+  width: 100%;
+  height: fit-content;
 }
