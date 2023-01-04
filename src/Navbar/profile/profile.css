@@ -1,0 +1,13 @@
+.profile {
+    width: 84vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    border: 1px solid red;
+}
+.pro-center {
+    width: 50vw;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid red;
+}

@@ -239,7 +239,7 @@ function Navbar() {
           </div>
           <div>
             <img src={Pro}/>
-            <p>Profile</p>
+            <Link to="/Profile">Profile</Link>
           </div>
         </div>
         <div className="down">
