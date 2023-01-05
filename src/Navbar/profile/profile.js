@@ -4,6 +4,7 @@ import { useState } from "react";
 
 function Profile() {
   const [show, setShow] = useState(false);
+  const [settings, setSettings] = useState(false);
 
   return (
     <div className="profile">
@@ -17,6 +18,7 @@ function Profile() {
               <p></p>
               <button>Edit profile</button>
               <svg
+                onClick={() => setSettings(!show)}
                 aria-label="Options"
                 class="_ab6-"
                 color="#fafafa"
@@ -63,10 +65,28 @@ function Profile() {
       {show && (
         <div className="add">
           <div className="add-post">
-            <input placeholder="Name"></input>
-            <input placeholder="description"></input>
-            <input type={Image} placeholder="image"></input>
+            <input className="Name" placeholder="Name"></input>
+            <input className="Description" placeholder="description"></input>
+            <input className="Image" type={Image} placeholder="image"></input>
             <button>Post</button>
+            <button onClick={() => setShow(false)}>Cancel</button>
+          </div>
+        </div>
+      )}
+      {settings && (
+        <div className="Settings">
+          <div className="settings-center">
+            <button>Change password</button>
+            <button>QR Code</button>
+            <button>Apps and Websites</button>
+            <button>Notifications</button>
+            <button>Privacy and security</button>
+            <button>Supervision</button>
+            <button>Login activity</button>
+            <button>Emails from Instagram</button>
+            <button>Report a problem </button>
+            <button>Log out</button>
+            <button onClick={() => setSettings(false)}>Cancel</button>
           </div>
         </div>
       )}
