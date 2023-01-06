@@ -1,10 +1,16 @@
 import "./profile.css";
 import Pro from "../term-bg-1-3d6355ab.jpg";
 import { useState } from "react";
+import { useNavigate} from "react-router-dom"
 
 function Profile() {
   const [show, setShow] = useState(false);
+  const navigate  = useNavigate()
   const [settings, setSettings] = useState(false);
+
+function logout () {
+      navigate("/")
+  }
 
   return (
     <div className="profile">
@@ -85,7 +91,7 @@ function Profile() {
             <button>Login activity</button>
             <button>Emails from Instagram</button>
             <button>Report a problem </button>
-            <button>Log out</button>
+            <button onClick={() => logout()}>Log out</button>
             <button onClick={() => setSettings(false)}>Cancel</button>
           </div>
         </div>
