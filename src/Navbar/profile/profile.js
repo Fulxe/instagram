@@ -1,15 +1,15 @@
 import "./profile.css";
 import Pro from "../term-bg-1-3d6355ab.jpg";
 import { useState } from "react";
-import { useNavigate} from "react-router-dom"
+import { useNavigate } from "react-router-dom";
 
 function Profile() {
   const [show, setShow] = useState(false);
-  const navigate  = useNavigate()
+  const navigate = useNavigate();
   const [settings, setSettings] = useState(false);
 
-function logout () {
-      navigate("/")
+  function logout() {
+    navigate("/");
   }
 
   return (
@@ -17,7 +17,12 @@ function logout () {
       <div className="pro-center">
         <div className="pro-up">
           <div className="up-left">
-            <img src={Pro} />
+            <input
+              type="file"
+              class="filepond"
+              name="filepond"
+              accept="image/png, image/jpeg, image/gif"
+            />
           </div>
           <div className="up-right">
             <div className="first">

@@ -9,7 +9,7 @@ function Post(props) {
     <div className="posts">
       <div className="post-profile">
         <div className="post-profile2">
-          <img src={proimg} />
+          <img src={Pro} />
           <div className="pro-name">{name}</div>
         </div>
         <div className="post-profile3">

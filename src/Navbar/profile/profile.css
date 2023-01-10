@@ -30,9 +30,15 @@
   justify-content: center;
   align-items: center;
 }
-.up-left img {
+.up-left input {
   width: 70%;
+  height: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   border-radius: 100%;
+  cursor: pointer;
+  border: 1px solid red;
 }
 .up-right {
   width: 50%;

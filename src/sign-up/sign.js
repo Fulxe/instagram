@@ -9,7 +9,7 @@ import axios from "axios";
 function Sign() {
   // const navigate = useNavigate();
   const [value, setValue] = useState({ email: "", password: "", username: "" });
-const navigate = useNavigate();
+  const navigate = useNavigate();
 
   const create = async () => {
     try {
@@ -24,36 +24,12 @@ const navigate = useNavigate();
       localStorage.setItem("uid", user.data.data._id);
       // naviga
       if (user) {
-        navigate("/Home")
-      } 
+        navigate("/Home");
+      }
     } catch (error) {
       console.log(error);
     }
   };
-  // function log() {
-  //   if (value.email && value.password && value.username) {
-  //     navigate("/home");
-  //   } else {
-  //     return alert("nothing");
-  //   }
-  //   setValue();
-  // }
-  // const [username , setusername] = useState('');
-  // const [password , setpassword] = useState('');
-  // const [email , setemail] = useState('');
-
-  // useEffect(() => {
-  //   axios.get("http://localhost:1000")
-  //   .then(
-  //     (res) => {
-  //       console.log(res);
-  //     },
-  //     (error) => {
-  //       console.log(error);
-  //     }
-  //   );
-  // }, []);
-
   return (
     <div className="Sign">
       <div className="sign-center">

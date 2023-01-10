@@ -1,4 +1,4 @@
-import "./login.css";
+  import "./login.css";
 import Logo from "./Instagram_logo.svg.png";
 import Fc from "./124010.png";
 import Nuur from "./Screenshot 2022-12-27 170322.png";
