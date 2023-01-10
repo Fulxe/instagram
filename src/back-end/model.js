@@ -15,6 +15,7 @@ const UserScheme = new Schema({
     type: Date,
     default: Date.now,
   },
+  image: String
 });
 
 const UserModel = model("User", UserScheme);

@@ -1,16 +1,34 @@
-import react, { useState } from "react";
+import react, { useEffect, useState } from "react";
 import "./post.css";
+import axios from "axios";
 import Pro from "./term-bg-1-3d6355ab.jpg";
+import { set } from "mongoose";
 
 function Post(props) {
   const [Liked, setLiked, Saved, setSaved] = useState(false);
   const { name, img, proimg, des } = props;
+  const [firstName, setFirstName] = useState();
+  const FirstName = async () => {
+    // const name = await axios.get(`http://localhost1000`, {
+    //   firstName
+    // });
+    const id = localStorage.getItem('uid')
+    const name = await axios.get(`http://localhost1000/${id}`);
+    console.log(name.data.data);
+  }
+
+  useEffect(() => {
+    console.log('hi')
+    FirstName()
+
+  }, [])
+
   return (
     <div className="posts">
       <div className="post-profile">
         <div className="post-profile2">
           <img src={Pro} />
-          <div className="pro-name">{name}</div>
+          <div className="pro-name" style={{color:"white"}} ></div>
         </div>
         <div className="post-profile3">
           <svg

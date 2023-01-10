@@ -1,16 +1,43 @@
 import "./profile.css";
 import Pro from "../term-bg-1-3d6355ab.jpg";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import axios from "axios";
 
 function Profile() {
   const [show, setShow] = useState(false);
   const navigate = useNavigate();
   const [settings, setSettings] = useState(false);
+  const [user, setUser] = useState({});
 
   function logout() {
     navigate("/");
   }
+  const FirstName = async () => {
+    // const name = await axios.get(`http://localhost1000`, {
+    //   firstName
+    // });
+    const id = localStorage.getItem("uid");
+    const { data } = await axios.get(`http://localhost:1000/${id}`);
+    setUser(data.data);
+  };
+
+  useEffect(() => {
+    console.log("hi");
+    FirstName();
+  }, []);
+
+  const onImageUpload = (e) => {
+    const fileToLoad = e.target.files[0];
+    var fileReader = new FileReader();
+
+    fileReader.onload = function (fileLoadedEvent) {
+      var srcData = fileLoadedEvent.target.result; // <--- data: base64
+
+      console.log(srcData);
+    };
+    fileReader.readAsDataURL(fileToLoad);
+  };
 
   return (
     <div className="profile">
@@ -18,6 +45,7 @@ function Profile() {
         <div className="pro-up">
           <div className="up-left">
             <input
+              onChange={onImageUpload}
               type="file"
               class="filepond"
               name="filepond"
@@ -64,7 +92,7 @@ function Profile() {
               <p>following</p>
             </div>
             <div className="third">
-              <p>Fulxe</p>
+              <p>{user.firstName}</p>
             </div>
           </div>
         </div>
